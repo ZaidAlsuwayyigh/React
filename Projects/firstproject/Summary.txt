@@ -1,0 +1,13 @@
+Summary of the process (flow) of the project: This is a tree shows whos the parent of who and the flow is running.
+
+                                                                         APP
+
+                                       NewExpense                                                                   Expenses
+
+
+                          ExpenseForm                                                          ExpensesFilter                                    ExpensesList
+
+
+                    NULL              NULL                                                  NULL                NULL                     ExpenseItem                  NULL
+
+                                                                                                                                   ExpenseDate      NULL
