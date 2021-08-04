@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import './NewExpense.css';
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+    const [showForm, setShowForm] = useState(false);
     // gathering information from a child component <ExpenseForm>
+
 
     const savedExpensesDataHandler = (enteredExpenseData) => {
         const expenseData = {
@@ -12,10 +14,25 @@ const NewExpense = (props) => {
         };
 
         props.onAddExpense(expenseData);
+        // setShowForm(false);
     }
+    
+    const showTheForm = () => {
+       setShowForm(true);
+    }
+
+    const hideTheform = () => {
+        setShowForm(false);
+    }
+
     return (
         <div className="new-expense">
-            <ExpenseForm  onSubmitFormData={savedExpensesDataHandler}/>
+            {!showForm && <button onClick={showTheForm}>Add a new expense </button>}
+
+            {showForm && <ExpenseForm  onSubmitFormData={savedExpensesDataHandler}  onCancel={hideTheform}/> }
+            
+           
+           
         </div>
     );
 };
