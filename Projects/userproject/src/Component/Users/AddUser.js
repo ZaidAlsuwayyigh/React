@@ -4,11 +4,14 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import classes from './AddUser.module.css';
 import Wrapper from '../Helpers/Wrapper';
+import ErrorModel from '../UI/ErrorModel';
+
 
 
 const AddUser = (props) => {
   const [currentUserName, setCurrentUserName] = useState('');
   const [userAge, setUserAge] = useState('');
+  
 
   const handleName = (event) => {
     setCurrentUserName(event.target.value);
@@ -18,10 +21,12 @@ const AddUser = (props) => {
       setUserAge(event.target.value);
   }
 
+
   const handleFormSubmit = (event) => {
+    
       event.preventDefault(); 
 
-      alert(`Hey, ${currentUserName}, your age is  ${userAge}`)
+    
       if(userAge <= 0){
        alert(`Dear ${currentUserName}, make sure the age is a proper one. THank you.`);
         
@@ -33,6 +38,7 @@ const AddUser = (props) => {
         return;
       }
       props.liftStateToApp(currentUserName, userAge);
+      
 
 
 
@@ -45,6 +51,7 @@ const AddUser = (props) => {
   return (
 
     <Wrapper>
+      <ErrorModel title="An error occured" message="something went wrong" />
       <Card className={classes.input}>
        <form onSubmit={handleFormSubmit}>
          <label htmlFor="username" >Username</label> 

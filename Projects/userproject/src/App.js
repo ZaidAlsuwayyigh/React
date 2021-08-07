@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AddUser from './Component/Users/AddUser';
+
 import UsersList from './Component/Users/UsersList';
 
 
@@ -10,7 +11,7 @@ function App() {
 
   const getInfoFromAddUser = (uName, uAge) => {
     setUsersList( prevUsersList => {
-      return [...prevUsersList, { name: uName, age: uAge, id: Math.random().toString() }];
+      return [...prevUsersList, {id: Math.random().toString(), name: uName, age: uAge}];
     });
   };
   return (
@@ -22,3 +23,8 @@ function App() {
 }
 
 export default App;
+
+
+///    --------------------------APP------------------------------------
+// --------------AddUser--------------------------UsersList-----------------------
+//--------Child-----------Child----------------child---------child---------

@@ -14,4 +14,19 @@
     margin: 0.5rem 0;
     padding: 0.5rem;
   }
+
+  .users textarea {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+    /* background-color: black; */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #4f005f;
+    resize: none;
+    text-align: center;
+    border-radius: 30px;
+   }
   
